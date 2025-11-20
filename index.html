@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Christopher Ward Construction: Premium construction services in London. Residential and commercial building specialists. Secure, reliable, and professional." />
+  <meta name="keywords" content="construction, builder, ,carpentry, London, home renovation, commercial builder, Christopher Ward" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1нік Maximum-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Christopher Ward Construction // Access Restricted</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: 'Roboto Mono', monospace;
+      overflow: hidden;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(0,255,0,0.03) 0px, transparent 1px, transparent 2px, rgba(0,255,0,0.03) 3px),
+        repeating-linear-gradient(90deg, rgba(0,255,0,0.03) 0px, transparent 1px, transparent 2px, rgba(0,255,0,0.03) 3px);
+      animation: scanlines 8s linear infinite;
+    }
+    @keyframes scanlines {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 100vh; }
+    }
+
+    .terminal {
+      width: 90%;
+      max-width: 680px;
+      background: rgba(0,0,0,0.9);
+      border: 2px solid #0f0;
+      border-radius: 8px;
+      box-shadow: 0 0 30px #0f0, inset 0 0 20px rgba(0,255,0,0.2);
+      overflow: hidden;
+      animation: glow 3s infinite alternate;
+    }
+    @keyframes glow { from { box-shadow: 0 0 20px #0f0; } to { box-shadow: 0 0 40px #0f0, 0 0 60px rgba(0,255,0,0.4); } }
+
+    .title-bar {
+      background: #111;
+      padding: 8px 16px;
+      border-bottom: 1px solid #0f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .dots { display: flex; gap: 8px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .red { background: #ff5f57; }
+    .yellow { background: #febc2e; }
+    .green { background: #28c840; }
+
+    .content {
+      padding: 2rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0f0, #0ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      margin: 1rem 0;
+      text-shadow: 0 0 20px #0f0;
+      animation: glitch 4s infinite;
+    }
+    @keyframes glitch {
+      0%,100% { text-shadow: 0 0 20px #0f0; }
+      20% { text-shadow: 5px 0 0 #f00, -5px 0 0 #0ff; }
+      40% { text-shadow: -5px 0 0 #f00, 5px 0 0 #0ff; }
+    }
+
+    .secure {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(0,255,0,0.05);
+      border: 1px dashed #0f0;
+      border-radius: 6px;
+    }
+    .execute {
+      margin-top: 2rem;
+      padding: 1rem 3rem;
+      font-size: 1.3rem;
+      background: transparent;
+      color: #0f0;
+      border: 2px solid #0f0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      transition: all 0.3s;
+      animation: pulse 2s infinite;
+    }
+    .execute:hover {
+      background: #0f0;
+      color: #000;
+      box-shadow: 0 0 30px #0f0;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+    .hidden { display: none; }
+    .reveal {
+      margin-top: 0.8rem;
+      color: #0ff;
+      font-size: 1.15rem;
+    }
+    .contact-form {
+      margin: 0.8rem 0;
+      display: grid;
+      gap: 0.75em;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.15rem;
+    }
+    input, button {
+      padding: 0.85rem;
+      background: rgba(0,255,0,0.1);
+      border: 1px solid #0f0;
+      color: #0f0;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button { background: #0f0; color: #000; cursor: pointer; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<div class="terminal">
+  <div class="title-bar">
+    <div class="dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    secure_handshake.py
+  </div>
+
+  <div class="content">
+  <div class="logo">Christopher Ward Construction</div>
+
+  <button class="execute" onclick="executeScript()">
+    ▶ EXECUTE SCRIPT
+  </button>
+
+  <div id="revealed" class="hidden">
+    <div class="reveal">
+      <p>» ACCESS GRANTED «</p>
+      <p>Phone: <strong>+44 7833630464</strong></p>
+      <p>Email: office@christopherwardconstruction.com</p>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/mjklzrab" method="POST">
+      <input type="email" name="email" placeholder="> INPUT_EMAIL_ADDRESS" required />
+      <input type="text" name="message" placeholder="Quick message (optional)" />
+      <button type="submit">TRANSMIT SECURELY</button>
+    </form>
+    <p style="margin-top:1rem; font-size:0.9rem; opacity:0.7;">
+      Quantum-resistant encryption active ™
+    </p>
+  </div>
+</div>
+</div>
+
+<script>
+  function executeScript() {
+    document.getElementById('revealed').classList.remove('hidden');
+    document.querySelector('.execute').textContent = '✓ SCRIPT EXECUTED';
+    document.querySelector('.execute').disabled = true;
+    
+    // Extra cyberpunk flair
+    document.body.style.background = '#000';
+    setTimeout(() => alert('🔓 Firewall bypassed. Access granted.'), 800);
+  }
+</script>
+</body>
+</html>
