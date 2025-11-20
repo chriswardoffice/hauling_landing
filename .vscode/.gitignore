@@ -1,0 +1,11 @@
+# VS Code / FTP / Secrets
+sftp-config.json
+.vscode/
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+# Backups & temp
+*.bak
+*~

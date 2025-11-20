@@ -1,0 +1,86 @@
+# =============================================
+
+# IMPROVED & MODERN .htaccess (2025 best practice)
+
+# Works perfectly on Fasthosts Linux shared hosting
+
+# =============================================
+
+# 1. Force HTTPS + HSTS (HTTPS with padlock + future-proofing)
+
+RewriteEngine On
+
+# Redirect everything to HTTPS
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.\*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Add HSTS (tells browsers to ALWAYS use HTTPS for the next 1 year)
+
+# Includes subdomains and allows preloading (you can submit to hstspreload.org later)
+
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# 2. Modern Security Headers (much stronger shield)
+
+<IfModule mod_headers.c>
+    # Clickjacking protection
+    Header always append X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Enable browser XSS filter (still useful on older browsers)
+    Header set X-XSS-Protection "1; mode=block"
+
+    # NEW — Referrer Policy (privacy + stops leaking URLs)
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # NEW — Content Security Policy (basic but effective starter)
+    # Adjust if you use external fonts/scripts (Google Fonts, CDN, etc.)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'self';"
+
+    # NEW — Permissions Policy (disable unnecessary features)
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+
+</IfModule>
+
+# 3. Disable Directory Browsing
+
+Options -Indexes
+
+# 4. Protect sensitive files (including .htaccess itself)
+
+<Files ".ht\*">
+Require all denied
+</Files>
+
+<FilesMatch "\.(env|log|ini|bak|backup|sql|md|yml|yaml|dist|conf|lock|json|git|gitignore|htpasswd|php~)$">
+Require all denied
+</FilesMatch>
+
+# 5. Block obvious bad bots & scanners (silent 403)
+
+RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader|zmEu|HVAC|SBID|Semrush|AhrefsBot|MJ12bot|BLEXBot|DotBot) [NC]
+RewriteRule .\* - [F,L]
+
+# 6. Optional but recommended: WWW or non-WWW consistency
+
+# Choose ONE of the two blocks below — comment out the other
+
+# Option A: Force www[](https://www.example.com)
+
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+
+# RewriteRule ^(.\*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Option B: Force non-www[](https://example.com) ← I usually prefer this
+
+RewriteCond %{HTTP_HOST} ^www\.(._)$ [NC]
+RewriteRule ^(._)$ https://%1/$1 [L,R=301]
+
+# 7. (Optional) Hide Apache version & server signature
+
+ServerSignature Off
