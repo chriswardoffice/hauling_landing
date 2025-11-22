@@ -38,7 +38,7 @@
     <form class="contact-form" action="https://formspree.io/f/mjklzrab" method="POST">
       <input type="email" name="email" placeholder="> INPUT_EMAIL_ADDRESS" required />
       <input type="text" name="message" placeholder="Quick message (optional)" />
-      <button type="submit">TRANSMIT SECURELY</button>
+      <button type="submit">SEND</button>
     </form>
     <p style="margin-top:1rem; font-size:0.9rem; opacity:0.7;">
       Quantum-resistant encryption active ™
@@ -50,7 +50,8 @@
 <script>
   function executeScript() {
     document.getElementById('revealed').classList.remove('hidden');
-    document.querySelector('.execute').textContent = '✓ SCRIPT EXECUTED';
+    // **MODIFIED LINE:** Changed '✓ SCRIPT EXECUTED' to '✓'
+    document.querySelector('.execute').textContent = '✓'; 
     document.querySelector('.execute').disabled = true;
     
     // Extra cyberpunk flair
