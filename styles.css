@@ -144,3 +144,7 @@
       font-size: 1rem;
     }
     button { background: #0f0; color: #000; cursor: pointer; font-weight: bold; }
+/* Smooth removal of the ENTER button */
+#enterBtn {
+  transition: opacity 0.4s ease;
+}
