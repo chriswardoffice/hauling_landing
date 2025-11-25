@@ -6,11 +6,6 @@
 
 RewriteEngine On
 
-# Force the scanner tools to use the canonical non-www URL immediately
-
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.\*)$ https://%1/$1 [R=301,L]
-
 # 1. Force HTTPS
 
 RewriteCond %{HTTPS} off
