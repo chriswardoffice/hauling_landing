@@ -18,7 +18,7 @@
       <div class="dot yellow"></div>
       <div class="dot green"></div>
     </div>
-    secure_handshake.py
+    ward_construction_os v2.4
   </div>
 
   <div class="content">
@@ -50,13 +50,13 @@
 <script>
   function executeScript() {
     document.getElementById('revealed').classList.remove('hidden');
-    // **MODIFIED LINE:** Changed '✓ SCRIPT EXECUTED' to '✓'
-    document.querySelector('.execute').textContent = '✓'; 
-    document.querySelector('.execute').disabled = true;
     
-    // Extra cyberpunk flair
-    document.body.style.background = '#000';
-    // setTimeout(() => alert('🔓 Firewall bypassed. Access granted.'), 800);
+    const btn = document.querySelector('.execute');
+    btn.style.opacity = '0';
+    btn.style.pointerEvents = 'none';
+    setTimeout(() => btn.style.display = 'none', 400);
+    
+    document.body.style.background = '#000';  
   }
 </script>
 </body>
