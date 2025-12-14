@@ -148,3 +148,9 @@
 #enterBtn {
   transition: opacity 0.4s ease;
 }
+.visit-count {
+  font-family: 'Roboto Mono', monospace;  /* Matches terminal theme */
+  color: #00ff00;  /* Green terminal text */
+  margin: 10px 0;
+  font-size: 14px;
+}
